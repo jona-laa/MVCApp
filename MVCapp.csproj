@@ -9,12 +9,4 @@
     <Watch Include="**\*.cs;**\*.js;**\*.json;**\*.html;**.*.md;wwwroot\**\*;" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.2">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.2" />
-  </ItemGroup>
-
 </Project>
