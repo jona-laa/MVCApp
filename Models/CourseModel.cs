@@ -5,20 +5,20 @@ namespace MVCapp.Models
 {
     public class Course
     {
-        [Required(ErrorMessage = "Fyll i fält")]
+        [Required(ErrorMessage = "Field is required")]
         public string Code { get; set; }
         
-        [Required(ErrorMessage = "Fyll i fält")]
+        [Required(ErrorMessage = "Field is required")]
         public string Name { get; set; }
 
         [Required]
-        [MaxLength(2, ErrorMessage = "Max två tecken")]
+        [MaxLength(2, ErrorMessage = "Field is required")]
         public string Progression { get; set; }
         
-        [Required(ErrorMessage = "Fyll i fält")]
+        [Required(ErrorMessage = "Field is required")]
         public string Institution { get; set; }
 
-        [Required(ErrorMessage = "Fyll i fält")]
+        [Required(ErrorMessage = "Field is required")]
         public string Description { get; set; }
         
     }

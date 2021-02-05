@@ -5,11 +5,11 @@ namespace MVCapp.Models
 {
     public class Skill
     {
-        [Required(ErrorMessage = "Fyll i fält")]
+        [Required(ErrorMessage = "Field is required")]
         [Display(Name = "Skill")]
         public string SkillName { get; set; }
 
-        [Required(ErrorMessage = "Fyll i fält")]
+        [Required(ErrorMessage = "Field is required")]
         public string Icon { get; set; }
     }
 }

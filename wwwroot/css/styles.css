@@ -5,8 +5,7 @@
 @import './components/forms.css';
 @import './components/skills.css';
 @import './components/resume.css';
-
-
+@import './components/footer.css';
 
 * {
   box-sizing: border-box;
@@ -118,7 +117,7 @@ section {
 }
 body {
   font-family: 'Poppins', sans-serif;
-  background: #F7F7F7;
+  background: #f7f7f7;
   color: #272727;
   line-height: 1.6;
 }
@@ -155,6 +154,10 @@ h2 {
   text-align: center;
 }
 
+main {
+  min-height: calc(100vh - 200px);
+}
+
 section {
   padding: 20px 0;
 }
@@ -172,4 +175,10 @@ section {
   border: 1px solid rgba(128, 128, 128, 0.5);
   width: 150px;
   margin: auto;
+}
+
+@media screen and (max-width: 620px) {
+  main {
+    min-height: calc(100vh - 175px);
+  }
 }

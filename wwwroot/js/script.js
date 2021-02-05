@@ -6,7 +6,6 @@ const mainMenuToggle = document.querySelector('#main-menu-toggle');
 
 // Toggle mobile menu + change WAI-ARIA
 $('#main-menu-toggle').click(function () {
-    console.log('click on meny')
     $('.main-menu').toggle(100);
 
     if (mainMenu.getAttribute('aria-hidden') == 'false') {
