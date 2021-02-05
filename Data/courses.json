@@ -1,0 +1,121 @@
+[
+  {
+    "Code": "IG021G",
+    "Name": "Business Models",
+    "Progression": "A",
+    "Institution": "Mid Sweden University",
+    "Description": "Creating business models"
+  },
+  {
+    "Code": "DT102G",
+    "Name": "ASP.NET with C#",
+    "Progression": "B",
+    "Institution": "Mid Sweden University",
+    "Description": "Web-applications in ASP.NET"
+  },
+  {
+    "Code": "DT071G",
+    "Name": "Programming in C#.NET",
+    "Progression": "A",
+    "Institution": "Mid Sweden University",
+    "Description": "Introduction to development in C#.NET"
+  },
+  {
+    "Code": "IK060G",
+    "Name": "Project Management",
+    "Progression": "A",
+    "Institution": "Mid Sweden University",
+    "Description": "Project management methods and roles"
+  },
+  {
+    "Code": "DT173G",
+    "Name": "Web development III",
+    "Progression": "B",
+    "Institution": "Mid Sweden University",
+    "Description": "Git / Gulp / REST APIs / Sass"
+  },
+  {
+    "Code": "DT068G",
+    "Name": "Web Usability",
+    "Progression": "B",
+    "Institution": "Mid Sweden University",
+    "Description": "Usability / UI / UX"
+  },
+  {
+    "Code": "DT152G",
+    "Name": "Web Design for CMS",
+    "Progression": "B",
+    "Institution": "Mid Sweden University",
+    "Description": "Building custom WordPress themes"
+  },
+  {
+    "Code": "DT003G",
+    "Name": "Database Systems",
+    "Progression": "A",
+    "Institution": "Mid Sweden University",
+    "Description": "Relational Databases(MySQL/MariaDB)"
+  },
+  {
+    "Code": "DT093G",
+    "Name": "Web Development II",
+    "Progression": "B",
+    "Institution": "Mid Sweden University",
+    "Description": "PHP / Relational Databases(MySQL/MariaDB)"
+  },
+  {
+    "Code": "DT163G",
+    "Name": "Digital Imaging for the Web",
+    "Progression": "A",
+    "Institution": "Mid Sweden University",
+    "Description": "Photoshop / Optimizing Images for Web Usage"
+  },
+  {
+    "Code": "GD008G",
+    "Name": "Typography and Layout for Internet Publishing",
+    "Progression": "A",
+    "Institution": "Mid Sweden University",
+    "Description": "Best practices for using typography on the web, and designing of layouts"
+  },
+  {
+    "Code": "DT084G",
+    "Name": "Introduction to Programming in JavaScript",
+    "Progression": "A",
+    "Institution": "Mid Sweden University",
+    "Description": "JavaScript Basics"
+  },
+  {
+    "Code": "DT057G",
+    "Name": "Web Development I",
+    "Progression": "A",
+    "Institution": "Mid Sweden University",
+    "Description": "HTML5/CSS3"
+  },
+  {
+    "Code": "IB115B",
+    "Name": "Basic Video and Audio Processing",
+    "Progression": "-",
+    "Institution": "Stockholm University",
+    "Description": "Basic computer graphics(vector graphics, sprites, etc), and audio"
+  },
+  {
+    "Code": "IB132N",
+    "Name": "Object-Oriented Analysis and Design",
+    "Progression": "-",
+    "Institution": "Stockholm University",
+    "Description": "Object-Oriented Analysis and Design. UML, Class Diagrams, etc."
+  },
+  {
+    "Code": "IB139N",
+    "Name": "Computer Systems",
+    "Progression": "-",
+    "Institution": "Stockholm University",
+    "Description": "Hardware architecture, operative systems and networks"
+  },
+  {
+    "Code": "IB135N",
+    "Name": "Introduction to Computer Game Design",
+    "Progression": "-",
+    "Institution": "Stockholm University",
+    "Description": "Introduction to computer game design"
+  }
+]

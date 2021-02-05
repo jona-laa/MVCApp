@@ -1,0 +1,77 @@
+header {
+  background: rgba(0, 0, 0, 0.75);
+  height: 100px;
+  display: flex;
+}
+
+header .container {
+  align-items: center;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 100%;
+  height: 100%;
+}
+
+header .container .brand {
+  color: white;
+  font-family: 'Lobster';
+  font-size: 38px;
+  text-decoration: none;
+}
+
+header .container nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+header .container nav ul a {
+  color: white;
+  font-family: 'Poppins';
+  font-size: 18px;
+  text-decoration: none;
+}
+
+header .container nav ul a:visited {
+  color: white;
+}
+
+#main-menu-toggle {
+  display: none;
+}
+
+@media screen and (min-width: 621px) {
+  .main-menu {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  header {
+    height: 70px;
+  }
+
+  #main-menu-toggle {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 17.5px;
+  }
+
+  .main-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    padding: 0 10px;
+    height: 100vh;
+    opacity: 0.97;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .main-menu li a {
+    display: block;
+  }
+}

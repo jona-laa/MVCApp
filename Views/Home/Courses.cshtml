@@ -1,0 +1,59 @@
+@model MVCapp.Models.Course
+@* @model MVCapp.Models.ViewModel; *@
+
+@{
+    ViewData["Title"] = "Courses";
+    // Casts Courses string to an object
+    @* IEnumerable<MVCapp.Models.Course> Courses = (IEnumerable<MVCapp.Models.Course>)ViewData["Courses"]; *@
+}
+
+<h2>@ViewData["Title"]</h2>
+@* @foreach (MVCapp.Models.Course course in Courses)
+{
+<ul class="course-list">
+    <li>Namn: @course.Name</li>
+    <li>Kurskod: @course.Code</li>
+    <li>Progression: @course.Progression</li>
+    <li>Progression: @course.Progression</li>
+    <li>Institution: @course.Institution</li>
+    <li>Description: @course.Description</li>
+</ul>
+} *@
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    
+    <div>
+        <label asp-for="Code"></label>
+        <input asp-for="Code" />
+        <span asp-validation-for="Code"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Progression"></label>
+        <input asp-for="Progression" />
+        <span asp-validation-for="Progression"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Institution"></label>
+        <input asp-for="Institution" />
+        <span asp-validation-for="Institution"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+
+    <div class="form_buttons">
+        <input type="submit" value="Lägg till kurs">
+    </div>
+</form>

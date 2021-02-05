@@ -1,0 +1,66 @@
+@model MVCapp.Models.ViewModel
+
+@{
+    ViewData["Title"] = "Resume";
+}
+
+<h2 class="page-heading">@ViewData["Title"]</h2>
+
+<div class="resume">
+    <section id="courses">
+        <h3 class="section-heading">Studies</h3>
+        <div class="divider"></div>
+
+        <div class="resume-container">
+            @foreach (MVCapp.Models.Course course in Model.CoursesList)
+            {
+            <ul class="course-list">
+                <li class="thicc">@course.Code - @course.Name (@course.Progression)</li>
+                <li class="small thin">@course.Institution</li>
+                <li class="thin">@course.Description</li>
+            </ul>
+            }
+        </div>
+    </section>
+
+
+
+    <section id="work">
+        <h3 class="section-heading">Work</h3>
+        <div class="divider"></div>
+        <div class="resume-container">
+            @{
+                IEnumerable<MVCapp.Models.Work> Work = (IEnumerable<MVCapp.Models.Work>)ViewData["Work"];
+            }
+            @foreach (MVCapp.Models.Work work in Work)
+            {
+            <ul class="course-list">
+                <li class="thicc">@work.Company</li>
+                <li class="small">@work.Title</li>
+                <li class="thin">@work.Description</li>
+            </ul>
+            }       
+        </div>
+    </section>
+</div>
+
+
+
+<section id="skillset">
+    <h3 class="section-heading">Skills</h3>
+    <div class="divider"></div>
+      
+    <div class="skills-container">
+        <!-- Skills will render here -->
+        @{
+            IEnumerable<MVCapp.Models.Skill> Skills = (IEnumerable<MVCapp.Models.Skill>)ViewBag.skills;
+        }
+        @foreach (MVCapp.Models.Skill skill in Skills)
+        {
+        <div class="skill">
+            <i class="@skill.Icon icon"></i>
+            <span>@skill.SkillName</span>
+        </div>
+        }
+    </div>
+</section>

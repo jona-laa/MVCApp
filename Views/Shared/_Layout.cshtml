@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="se">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>@ViewData["Title"]</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="~/css/styles.css" type="text/css">
+        <link rel="icon" type="image/png" href="~/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+    </head>
+    <body>
+        <header id="top-header">
+            <div class="container">
+                <a class="brand" asp-controller="Home" asp-action="Index">Resume</a>
+                <nav>
+                    <a href="" onClick=event.preventDefault() role="button" id="main-menu-toggle" aria-label="Toggle Mobile Menu">
+                        <svg viewBox="0 0 100 80" width="40" height="40">
+                            <rect width="90" height="10" fill="#f7f7f7"></rect>
+                            <rect y="30" width="90" height="10" fill="#f7f7f7"></rect>
+                            <rect y="60" width="90" height="10" fill="#f7f7f7"></rect>
+                        </svg>
+                    </a>
+                    <ul class="main-menu">
+                        <li><a asp-controller="Home" asp-action="Index">Resume</a></li>
+                        <li><a asp-controller="Home" asp-action="Skills">Add Skills</a></li>
+                        <li><a asp-controller="Home" asp-action="Courses">Add Courses</a></li>
+                        <li><a asp-controller="Home" asp-action="Work">Add Work</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            <main>
+                @RenderBody()
+            </main>
+        </div>
+        <script src="//code.jquery.com/jquery-latest.js"></script>
+        <script src="~/js/script.js" asp-append-version="true"></script>
+    </body>
+</html>

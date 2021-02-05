@@ -1,0 +1,50 @@
+.resume {
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.97)
+    ),
+    url('../../images/resume-bg.jpg') no-repeat center center/cover;
+}
+
+.course-list {
+    margin: 10px;
+}
+
+.resume-container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.resume-container ul {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 30%;
+}
+
+.small {
+  font-size: 14px;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+.thicc {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 960px) {
+  .resume-container ul {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .resume-container ul {
+    width: 100%;
+  }
+}
