@@ -1,5 +1,4 @@
 @model MVCapp.Models.Course
-@* @model MVCapp.Models.ViewModel; *@
 
 @{
     ViewData["Title"] = "Add Courses";
@@ -26,6 +25,7 @@
     <div>
         <label asp-for="Progression"></label>
         <input asp-for="Progression" />
+        @* <select asp-for="Progression" asp-items="@(new SelectList(ViewBag.progressions))"></select> *@
         <span asp-validation-for="Progression"></span>
     </div>
     

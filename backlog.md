@@ -1,9 +1,10 @@
 ## Extra
-* Implementera en enkel validering för ett eller fler input-fält.
-* Använda minst tre olika typer av inmatnings-kontroller i vyn. 
-  * Testa något mer än textbox: dropdownlist, radiobuttons, checkboxar eller liknande.
-    * Radio/Dropdown på Courses Progression
-    * Radio/Dropdown på Skill Icon fas fa/fab fa + text
+* Simple validation for input fields
+* Three input controls in views
+  * E.g dropdownlist, radiobuttons, checkboxar...
+    * Radio/Dropdown on Courses Progression
+    * Radio/Dropdown on Skill Icon fas fa/fab fa + text
 
 
 * try...catches
+* Fix data now showing after invalid submit.

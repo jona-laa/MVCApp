@@ -24,8 +24,8 @@ namespace MVCapp.Controllers
                 skillsJson = sr.ReadToEnd();
                 Skills = JsonSerializer.Deserialize<List<Skill>>(skillsJson);
             }
-            ViewBag.skills = Skills;
 
+            ViewBag.skills = Skills;
             return View();
         }
 
@@ -35,33 +35,28 @@ namespace MVCapp.Controllers
         [HttpPost]
         public IActionResult Skills(Skill model)
         {
+            List<Skill> Skills;
+            using(var sr = new StreamReader(@"./Data/skills.json"))
+            {
+                string json = sr.ReadToEnd();
+                Skills = JsonSerializer.Deserialize<List<Skill>>(json);
+            }
+
             if(ModelState.IsValid)
             {
-                try
-                {
-                    List<Skill> Skills;
-                    using(var sr = new StreamReader(@"./Data/skills.json"))
-                    {
-                        string json = sr.ReadToEnd();
-                        Skills = JsonSerializer.Deserialize<List<Skill>>(json);
-                        Skills.Add(model);
-                    }
+                Skills.Add(model);
 
-                    using(var sr = new StreamWriter(@"./Data/skills.json"))
-                    {
-                        string serialized = JsonSerializer.Serialize(Skills);
-                        sr.Write(serialized);
-                    }
-                    
-                    ViewBag.skills = Skills;
-                }
-                catch
+                using(var sr = new StreamWriter(@"./Data/skills.json"))
                 {
-                    WriteLine("Could not write skills...");
+                    string serialized = JsonSerializer.Serialize(Skills);
+                    sr.Write(serialized);
                 }
 
-                ModelState.Clear();
+                return RedirectToAction("Skills");       
+                // ModelState.Clear();
             }
+
+            ViewBag.skills = Skills;
             return View();
         }
 
@@ -81,7 +76,6 @@ namespace MVCapp.Controllers
             }
 
             ViewBag.work = Work;
-
             return View();
         }
 
@@ -91,34 +85,27 @@ namespace MVCapp.Controllers
         [HttpPost]
         public IActionResult Work(Work model)
         {
+            List<Work> Work;
+            using(var sr = new StreamReader(@"./Data/work.json"))
+            {
+                string json = sr.ReadToEnd();
+                Work = JsonSerializer.Deserialize<List<Work>>(json);
+            }
+
             if(ModelState.IsValid)
             {
-                try
-                {
-                    List<Work> Work;
-                    using(var sr = new StreamReader(@"./Data/work.json"))
-                    {
-                        string json = sr.ReadToEnd();
-                        Work = JsonSerializer.Deserialize<List<Work>>(json);
-                        Work.Add(model);
-                    }
+                Work.Add(model);
 
-                    using(var sr = new StreamWriter(@"./Data/work.json"))
-                    {
-                        string serialized = JsonSerializer.Serialize(Work);
-                        sr.Write(serialized);
-                    }
-
-                    ViewBag.work = Work;
-                }
-                catch
+                using(var sr = new StreamWriter(@"./Data/work.json"))
                 {
-                    WriteLine("Could not write work...");
+                    string serialized = JsonSerializer.Serialize(Work);
+                    sr.Write(serialized);
                 }
 
-                ModelState.Clear();
+                return RedirectToAction("Work");       
             }
-          
+
+            ViewBag.work = Work;
             return View();
         }
 
@@ -130,6 +117,14 @@ namespace MVCapp.Controllers
         [HttpGet]
         public IActionResult Courses()
         {
+            // For select-box/dropdown
+            // List<string> progressions = new List<string>();
+            // progressions.Add("A");
+            // progressions.Add("B");
+            // progressions.Add("-");
+            // ViewBag.progressions = progressions;
+
+
             List<Course> Courses;
             using(var sr = new StreamReader(@"./Data/courses.json"))
             {
@@ -138,7 +133,6 @@ namespace MVCapp.Controllers
             }
 
             ViewData["Courses"] = Courses;
-
             return View();
         }
 
@@ -148,34 +142,27 @@ namespace MVCapp.Controllers
         [HttpPost]
         public IActionResult Courses(Course model)
         {
+            List<Course> Courses;
+            using(var sr = new StreamReader(@"./Data/courses.json"))
+            {
+                string json = sr.ReadToEnd();
+                Courses = JsonSerializer.Deserialize<List<Course>>(json);
+            }
+            
             if(ModelState.IsValid)
             {
-                try
-                {
-                    List<Course> Courses;
-                    using(var sr = new StreamReader(@"./Data/courses.json"))
-                    {
-                        string json = sr.ReadToEnd();
-                        Courses = JsonSerializer.Deserialize<List<Course>>(json);
-                        Courses.Add(model);
-                    }
+                Courses.Add(model);
 
-                    using(var sr = new StreamWriter(@"./Data/courses.json"))
-                    {
-                        string serialized = JsonSerializer.Serialize(Courses);
-                        sr.Write(serialized);
-                    }
-
-                    ViewData["Courses"] = Courses;
-                }
-                catch
+                using(var sr = new StreamWriter(@"./Data/courses.json"))
                 {
-                    WriteLine("Could not write courses...");
+                    string serialized = JsonSerializer.Serialize(Courses);
+                    sr.Write(serialized);
                 }
 
-                ModelState.Clear();
+                return RedirectToAction("Courses");
             }
 
+            ViewData["Courses"] = Courses;
             return View();
         }
     }
