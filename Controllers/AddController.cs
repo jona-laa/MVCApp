@@ -4,8 +4,6 @@ using static System.Console;
 using System.IO;
 using System.Text.Json;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Http;
-// using Newtonsoft.Json;
 
 
 
@@ -28,8 +26,6 @@ namespace MVCapp.Controllers
             }
             ViewBag.skills = Skills;
 
-            HttpContext.Session.SetString("skillsJson", skillsJson);
-
             return View();
         }
 
@@ -43,20 +39,21 @@ namespace MVCapp.Controllers
             {
                 try
                 {
-                    List<Skill> JsonObj;
+                    List<Skill> Skills;
                     using(var sr = new StreamReader(@"./Data/skills.json"))
                     {
                         string json = sr.ReadToEnd();
-                        JsonObj = JsonSerializer.Deserialize<List<Skill>>(json);
-                        JsonObj.Add(model);
+                        Skills = JsonSerializer.Deserialize<List<Skill>>(json);
+                        Skills.Add(model);
                     }
 
                     using(var sr = new StreamWriter(@"./Data/skills.json"))
                     {
-                        string serialized = JsonSerializer.Serialize(JsonObj);
+                        string serialized = JsonSerializer.Serialize(Skills);
                         sr.Write(serialized);
-                        HttpContext.Session.SetString("skillsJson", serialized);
                     }
+                    
+                    ViewBag.skills = Skills;
                 }
                 catch
                 {
@@ -98,19 +95,21 @@ namespace MVCapp.Controllers
             {
                 try
                 {
-                    List<Work> JsonObj;
+                    List<Work> Work;
                     using(var sr = new StreamReader(@"./Data/work.json"))
                     {
                         string json = sr.ReadToEnd();
-                        JsonObj = JsonSerializer.Deserialize<List<Work>>(json);
-                        JsonObj.Add(model);
+                        Work = JsonSerializer.Deserialize<List<Work>>(json);
+                        Work.Add(model);
                     }
 
                     using(var sr = new StreamWriter(@"./Data/work.json"))
                     {
-                        string serialized = JsonSerializer.Serialize(JsonObj);
+                        string serialized = JsonSerializer.Serialize(Work);
                         sr.Write(serialized);
                     }
+
+                    ViewBag.work = Work;
                 }
                 catch
                 {
@@ -136,7 +135,6 @@ namespace MVCapp.Controllers
             {
                 string json = sr.ReadToEnd();
                 Courses = JsonSerializer.Deserialize<List<Course>>(json);
-                HttpContext.Session.SetString("Credits", (Courses.Count * 7.5).ToString());
             }
 
             ViewData["Courses"] = Courses;
@@ -154,19 +152,21 @@ namespace MVCapp.Controllers
             {
                 try
                 {
-                    List<Course> JsonObj;
+                    List<Course> Courses;
                     using(var sr = new StreamReader(@"./Data/courses.json"))
                     {
                         string json = sr.ReadToEnd();
-                        JsonObj = JsonSerializer.Deserialize<List<Course>>(json);
-                        JsonObj.Add(model);
+                        Courses = JsonSerializer.Deserialize<List<Course>>(json);
+                        Courses.Add(model);
                     }
 
                     using(var sr = new StreamWriter(@"./Data/courses.json"))
                     {
-                        string serialized = JsonSerializer.Serialize(JsonObj);
+                        string serialized = JsonSerializer.Serialize(Courses);
                         sr.Write(serialized);
                     }
+
+                    ViewData["Courses"] = Courses;
                 }
                 catch
                 {

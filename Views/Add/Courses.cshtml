@@ -44,20 +44,22 @@
     <partial name="_FormButtons" />
 </form>
 
-<section id="courses">
-    <h3 class="section-heading">Courses</h3>
-    <div class="divider"></div>
+@if (Courses != null)
+{
+    <section id="courses">
+        <h3 class="section-heading">Courses</h3>
+        <div class="divider"></div>
 
-    <div class="resume-container">
-        @foreach (MVCapp.Models.Course course in Courses)
-        {
-        <ul class="course-list">
-            <li class="thicc">@course.Code - @course.Name (@course.Progression)</li>
-            <li class="small thin">@course.Institution</li>
-            <li class="thin">@course.Description</li>
-        </ul>
-        }
-    </div>
-    <partial name="_Credits" />
-</section>
-
+        <div class="resume-container">
+            @foreach (MVCapp.Models.Course course in Courses)
+            {
+            <ul class="course-list">
+                <li class="thicc">@course.Code - @course.Name (@course.Progression)</li>
+                <li class="small thin">@course.Institution</li>
+                <li class="thin">@course.Description</li>
+            </ul>
+            }
+        </div>
+        <partial name="_Credits" />
+    </section>
+}

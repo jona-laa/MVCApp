@@ -31,17 +31,21 @@
     <partial name="_FormButtons" />
 </form>
 
-<section id="work">
-    <h3 class="section-heading">Work</h3>
-    <div class="divider"></div>
-    <div class="resume-container">
-        @foreach (MVCapp.Models.Work work in Work)
-        {
-        <ul class="course-list">
-            <li class="thicc">@work.Company</li>
-            <li class="small">@work.Title</li>
-            <li class="thin">@work.Description</li>
-        </ul>
-        }       
-    </div>
-</section>
+@if (Work != null)
+{
+    <section id="work">
+        <h3 class="section-heading">Work</h3>
+        <div class="divider"></div>
+        <div class="resume-container">
+            
+            @foreach (MVCapp.Models.Work work in Work)
+            {
+            <ul class="course-list">
+                <li class="thicc">@work.Company</li>
+                <li class="small">@work.Title</li>
+                <li class="thin">@work.Description</li>
+            </ul>
+            }       
+        </div>
+    </section>
+}

@@ -37,14 +37,15 @@ namespace MVCapp.Controllers
 
 
 
-            string skillsJson = HttpContext.Session.GetString("skillsJson");
-            if (!string.IsNullOrEmpty(skillsJson))
+            List<Skill> Skills;
+            using(var sr = new StreamReader(@"./Data/skills.json"))
             {
-                List<Skill> Skills = JsonSerializer.Deserialize<List<Skill>>(skillsJson);
-                ViewBag.skills = Skills;
+                string json = sr.ReadToEnd();
+                Skills = JsonSerializer.Deserialize<List<Skill>>(json);
             }
+            ViewBag.skills = Skills;
 
-            
+
 
             ViewModel vm = new ViewModel
             {

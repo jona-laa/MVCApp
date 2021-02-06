@@ -4,6 +4,9 @@
     string Credits = Context.Session.GetString("Credits");
 }
 
-<div class="credits">
-    <span>Total Credits: @Credits</span>
-</div>
+@if (!string.IsNullOrEmpty(Credits))
+{
+    <div class="credits">
+        <span>Total Credits: @Credits</span>
+    </div>
+}
