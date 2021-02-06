@@ -1,0 +1,44 @@
+@model MVCapp.Models.Skill
+@{
+    ViewData["Title"] = "Add Skills";
+    List<MVCapp.Models.Skill> Skills = ViewBag.skills;
+}
+
+<h2 class="page-heading">@ViewData["Title"]</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    
+    <div>
+        <label asp-for="SkillName"></label>
+        <input asp-for="SkillName" />
+        <span asp-validation-for="SkillName"></span>
+    </div>
+ 
+    <div>
+        <label asp-for="Icon"></label>
+        <input asp-for="Icon" />
+        <span asp-validation-for="Icon"></span>
+    </div>
+
+    <partial name="_FormButtons" />
+</form>
+
+@if (Skills != null)
+{
+<section>
+    <h3 class="section-heading">Skills</h3>
+    <div class="divider"></div>
+      
+    <div class="skills-container">
+        <!-- Skills will render here -->
+            @foreach (MVCapp.Models.Skill skill in Skills)
+            {
+            <div class="skill">
+                <i class="@skill.Icon icon"></i>
+                <span>@skill.SkillName</span>
+            </div>
+            }
+    </div>
+</section>
+}

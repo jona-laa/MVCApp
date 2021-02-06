@@ -21,6 +21,7 @@
             </ul>
             }
         </div>
+        <partial name="_Credits" />
     </section>
 
 
@@ -46,21 +47,25 @@
 
 
 
+@{
+    List<MVCapp.Models.Skill> Skills = ViewBag.skills;
+}
+
+@if (Skills != null)
+{
 <section id="skillset">
     <h3 class="section-heading">Skills</h3>
     <div class="divider"></div>
       
     <div class="skills-container">
         <!-- Skills will render here -->
-        @{
-            IEnumerable<MVCapp.Models.Skill> Skills = (IEnumerable<MVCapp.Models.Skill>)ViewBag.skills;
-        }
-        @foreach (MVCapp.Models.Skill skill in Skills)
-        {
-        <div class="skill">
-            <i class="@skill.Icon icon"></i>
-            <span>@skill.SkillName</span>
-        </div>
-        }
+            @foreach (MVCapp.Models.Skill skill in Skills)
+            {
+            <div class="skill">
+                <i class="@skill.Icon icon"></i>
+                <span>@skill.SkillName</span>
+            </div>
+            }
     </div>
 </section>
+}

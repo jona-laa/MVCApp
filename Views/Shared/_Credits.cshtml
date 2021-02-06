@@ -1,0 +1,9 @@
+@using Microsoft.AspNetCore.Http
+ 
+@{
+    string Credits = Context.Session.GetString("Credits");
+}
+
+<div class="credits">
+    <span>Total Credits: @Credits</span>
+</div>
