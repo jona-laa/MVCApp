@@ -6,6 +6,7 @@ namespace MVCapp.Models
     public class Course
     {
         [Required(ErrorMessage = "Field is required")]
+        [RegularExpression(@"^[a-zA-Z]{2}[0-9]{3}[a-zA-Z]{1}")]
         public string Code { get; set; }
         
         [Required(ErrorMessage = "Field is required")]

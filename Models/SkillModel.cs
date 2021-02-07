@@ -9,6 +9,7 @@ namespace MVCapp.Models
         public string SkillName { get; set; }
 
         [Required(ErrorMessage = "Field is required")]
+        [RegularExpression(@"^(fas)\s(fa-)[a-z]+|^(fab\sfa-)[a-z]+")]
         public string Icon { get; set; }
     }
 }
