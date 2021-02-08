@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using MVCapp.Models;
-using static System.Console;
 using System.IO;
 using System.Text.Json;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 
@@ -117,14 +117,6 @@ namespace MVCapp.Controllers
         [HttpGet]
         public IActionResult Courses()
         {
-            // For select-box/dropdown
-            // List<string> progressions = new List<string>();
-            // progressions.Add("A");
-            // progressions.Add("B");
-            // progressions.Add("-");
-            // ViewBag.progressions = progressions;
-
-
             List<Course> Courses;
             using(var sr = new StreamReader(@"./Data/courses.json"))
             {
@@ -133,6 +125,8 @@ namespace MVCapp.Controllers
             }
 
             ViewData["Courses"] = Courses;
+
+            // return View(model);
             return View();
         }
 

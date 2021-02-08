@@ -25,7 +25,7 @@
     <div>
         <label asp-for="Progression"></label>
         <input asp-for="Progression" />
-        @* <select asp-for="Progression" asp-items="@(new SelectList(ViewBag.progressions))"></select> *@
+        @* <select asp-for="Progression" asp-items="@(new SelectList(ViewBag.progressions, "Value","Text"))"></select> *@
         <span asp-validation-for="Progression"></span>
     </div>
     

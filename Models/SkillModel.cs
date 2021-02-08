@@ -4,12 +4,10 @@ namespace MVCapp.Models
 {
     public class Skill
     {
-        [Required(ErrorMessage = "Field is required")]
-        [Display(Name = "Skill")]
+        [Display(Name = "Skill"), Required(ErrorMessage = "Field is required")]
         public string SkillName { get; set; }
 
-        [Required(ErrorMessage = "Field is required")]
-        [RegularExpression(@"^(fas)\s(fa-)[a-z]+|^(fab\sfa-)[a-z]+")]
+        [RegularExpression(@"^(fas)\s(fa-)[a-z]+|^(fab\sfa-)[a-z]+"), Required(ErrorMessage =" Field is required")]
         public string Icon { get; set; }
     }
 }
